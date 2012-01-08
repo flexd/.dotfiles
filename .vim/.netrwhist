@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/kristoffer/apps/cognitive.io/public'
+let g:netrw_dirhist_2='/home/kristoffer/apps/cognitive.io/public/stylesheets'
+let g:netrw_dirhist_3='/home/kristoffer/apps/cognitive.io/public/sulten/css'
+let g:netrw_dirhist_4='/home/kristoffer/apps/gruppe48-backend/.git'
+let g:netrw_dirhist_5='/home/kristoffer/apps/gruppe48-backend'
+let g:netrw_dirhist_6='/home/kristoffer/code/cinch-redis/lib/cinch-redis'
+let g:netrw_dirhist_7='/home/kristoffer/code/ruby/fugro-inventory/views'
+let g:netrw_dirhist_8='/home/kristoffer/.weechat'
+let g:netrw_dirhist_9='/home/kristoffer/code/ruby/fugro-inventory'

@@ -1,42 +1,33 @@
-" mattgirv's .vimrc - 11/04/2011
-set nocompatible
-set expandtab
-set showcmd
-" use upper case and search become case sensitive
-set ignorecase
-set smartcase
-" line numbers 
-set number
-" formatting options
-set textwidth=0
-set wrapmargin=0
-set formatoptions=crt
-set nowrap
-set shiftwidth=2
 set tabstop=2
-" interface
-set wildmenu
-" completion menus
-highlight Pmenu ctermfg=0 ctermbg=3
-highlight PmenuSel ctermfg=0 ctermbg=7
-" general
-set hlsearch
-set incsearch
-set autoindent
-syntax on
-    if &diff
-        syntax off
-    endif
-" auto switch to folder where editing file
-autocmd BufEnter * cd %:p:h
-set shortmess=I
-set backspace=start,indent,eol
-filetype plugin on
-set completeopt=longest,menuone
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+set expandtab
+set shiftwidth=2
+set fileencoding=utf-8
+set encoding=utf-8
+set termencoding=utf-8
+set showcmd
+filetype plugin indent on
+color molokai
+syntax enable
+autocmd! BufNewFile * silent! 0r ~/.vim/skel/tmpl.%:e
 
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+set backspace=indent,eol,start  " backspace through everything in insert mode
 
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+"" Searching
+set hlsearch                    " highlight matches
+set incsearch                   " incremental searching
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
+
+call pathogen#infect()
+
+" use comma as <Leader> key instead of backslash
+let mapleader=","
+
+" Double <Leader> to switch between buffers
+nnoremap <leader><leader> <c-^>
+" double percentage sign in command mode is expanded
+" to directory of current file - http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
